@@ -1,0 +1,51 @@
+<ion-view class="profile-view">
+  <ion-nav-title>
+    <span>Rádio / TV</span>
+  </ion-nav-title>
+  <ion-content>
+  <div>
+
+    <div style="text-align: center; padding-top: 5px" dynamic-anchor-fix>
+        <a ng-href="{{linkSaudeEmDia}}">
+          <img class="user-image" ng-src="img/multimidia/saude_em_dia.jpg">
+        </a>
+
+        <div style="text-align: left; padding: 10px">
+          <fieldset style="background-color: palegoldenrod">
+              <h5><i class="icon ion-calendar"></i> Segunda-feira à Sexta-feira</h5>
+              <h5><i class="icon ion-clock"></i> 12:30 às 13:00</h5>
+
+              <hr></hr>
+
+               <div style="text-align: center; font-style: italic" dynamic-anchor-fix>
+                  <iframe src="http://www.7br.com.br/play/assuncaoam.html" width="300" height="50" frameborder="0" marginwidth="0 marginheight=" scrolling="no" align="top"></iframe>
+              </div>
+          </fieldset>
+        </div>
+    </div>
+   
+   <hr></hr>
+
+   <div style="text-align: center; padding-top: 10px" dynamic-anchor-fix>
+        <a ng-href="{{linkDimensaoTotal}}">
+          <img class="user-image" ng-src="img/multimidia/dimensao_total.jpg">
+        </a>
+
+        <div style="text-align: left; padding: 10px">
+          <fieldset style="background-color: palegoldenrod">
+              <h5><i class="icon ion-calendar"></i> Terça-feira e Quinta-feira <i class="icon ion-clock"></i> 22:00</h5>
+              <h5><i class="icon ion-calendar"></i> Sábado <i class="icon ion-clock"></i> 21:00</h5>
+
+              <hr></hr>
+
+               <div style="text-align: center; font-style: italic" dynamic-anchor-fix>
+                  <a ng-href="{{linkDimensaoTotal}}">
+                    <h5><i class="icon ion-play"></i> Assistir ao vivo</h5>
+                  </a>
+              </div>
+          </fieldset>
+        </div>
+    </div>
+
+  </ion-content>
+</ion-view>

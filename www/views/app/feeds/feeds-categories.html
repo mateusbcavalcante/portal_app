@@ -1,0 +1,66 @@
+<ion-view class="feeds-categories-view">
+  <ion-nav-buttons side="left">
+    <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+  </ion-nav-buttons>
+  <ion-nav-title>
+    <span>Categorias</span>
+  </ion-nav-title>
+  <ion-content>
+
+    <!-- Refresh to get the new posts -->
+    <ion-refresher pulling-text="Puxe para atualizar..." on-refresh="doRefresh()">
+    </ion-refresher>
+  
+    <div class="row categories-list">
+      <div ng-repeat="category in feeds_categories" class="col col-50">
+        <a class="feed-category" ui-sref="app.feed-entries({categoryId: category.id, sourceId: category.name, telaColunista: 'N'})">
+            <pre-img ratio="_1_1" helper-class="square-image">
+              <img class="category-image" ng-src="{{category.image}}" spinner-on-load>
+            </pre-img>
+            <div class="category-bg"></div>
+            <span class="badge badge-red category-title-badge" ng-if="category.quantidade > 0">{{category.quantidade}} </span>
+            <span class="category-title">{{category.name}}</span>
+        </a>
+      </div>
+    </div>
+
+    <style>
+      .badge {
+        padding: 1px 9px 2px;
+        font-size: 12.025px;
+        font-weight: bold;
+        white-space: nowrap;
+        color: #ffffff;
+        background-color: #999999;
+        -webkit-border-radius: 9px;
+        -moz-border-radius: 9px;
+        border-radius: 9px;
+      }
+      
+      .badge-warning {
+        background-color: #f89406;
+      }
+      .badge-warning:hover {
+        background-color: #c67605;
+      }
+      .badge-success {
+        background-color: #468847;
+      }
+      .badge-success:hover {
+        background-color: #356635;
+      }
+      .badge-info {
+        background-color: #3a87ad;
+      }
+      .badge-info:hover {
+        background-color: #2d6987;
+      }
+      .badge-red {
+        background-color: #f50832;
+      }
+      .badge-inverse:hover {
+        background-color: #1a1a1a;
+      }
+    </style>
+  </ion-content>
+</ion-view>

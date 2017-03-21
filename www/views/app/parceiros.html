@@ -1,0 +1,33 @@
+<ion-view class="slider-view">
+  <ion-nav-title>
+    <span>Parceiros</span>
+  </ion-nav-title>
+  <ion-content scroll="false">
+    <ion-slide-box show-pager="true">
+      <ion-slide ng-repeat="i in [1,2,3]">
+        <div class="list card">
+          
+          <div class="item item-image" dynamic-anchor-fix>
+            <a ng-href="{{link_1}}" ng-if="i == 1">
+              <img ng-src="img/parceiros/slide_{{i}}.jpg"/>
+            </a>
+
+            <a ng-href="{{link_2}}" ng-if="i == 2">
+              <img ng-src="img/parceiros/slide_{{i}}.jpg"/>
+            </a>
+
+             <a ng-href="{{link_3}}" ng-if="i == 3">
+              <img ng-src="img/parceiros/slide_{{i}}.jpg"/>
+            </a>            
+          </div>
+
+          <div class="item item-body">
+            <p ng-if="i == 1">{{descricao_1}}</p>
+            <p ng-if="i == 2">{{descricao_2}}</p>
+            <p ng-if="i == 3">{{descricao_3}}</p>
+          </div>
+        </div>
+      </ion-slide>
+    </ion-slide-box>
+  </ion-content>
+</ion-view>

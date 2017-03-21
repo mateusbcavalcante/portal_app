@@ -1,0 +1,39 @@
+<ion-view class="feed-entries-view">
+  <ion-nav-title>
+    <span>{{sourceTitle}}</span>
+  </ion-nav-title>
+  <ion-content>
+    <!-- Refresh to get the new posts -->
+    <ion-refresher pulling-text="Puxe para atualizar..." on-refresh="doRefresh()">
+    </ion-refresher>
+
+    <div class="entries-list">
+      <div ng-repeat="entry in feed.entries" class="list card entry-item">
+        <div class="entry-heading item item-text-wrap">
+          <h2 class="entry-title" ng-bind-html="entry.title.rendered | rawHtml"></h2>
+           <p class="post-author">
+            Por <span>{{entry.nameAuthor}} ({{entry.dateFormated}})
+          </p>
+        </div>
+        <div class="entry-content item item-text-wrap">
+          <img class="user-image" ng-src="{{entry.imageSrc}}" style="width: 350px; height: 350px;"/>
+          <p class="entry-excerpt" dynamic-anchor-fix ng-bind-html="entry.content.rendered | rawHtml"></p>
+          <div class="entry-actions row">
+            <div class="actions col col-center col-66">
+              <a class="button button-icon icon ion-bookmark" ng-click="bookmarkPost(entry)"></a>
+            </div>
+            <div class="read-more col col-center col-33">
+              <a ui-sref="app.post({postId: entry.id})" class="button button-small button-block button-assertive">
+                Leia Mais
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+     <!-- Infinit scroll -->
+    <ion-infinite-scroll on-infinite="teste()" distance="1%" icon="ion-loading-c">
+    </ion-infinite-scroll>
+  </ion-content>
+</ion-view>

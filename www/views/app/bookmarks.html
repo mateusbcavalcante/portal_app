@@ -1,0 +1,35 @@
+<ion-view class="bookmarks-view">
+  <ion-nav-title>
+    <span>Favoritos</span>
+  </ion-nav-title>
+  <ion-content>
+    <div ng-if="(bookmarks.wordpress.length == 0)" class="row bookmarks-container">
+      <div class="col col-center">
+        <div class="empty-results">
+          <i class="icon ion-bookmark"></i>
+          <h3 class="no-bookmarks">A lista está vazia!</h3>
+        </div>
+      </div>
+    </div>
+    <ul ng-if="(bookmarks.wordpress.length > 0)" class="bookmarks-list">
+      <div ng-if="bookmarks.wordpress.length > 0" class="item item-divider">
+        Postagens
+      </div>
+      <li class="bookmark-item" ng-repeat="(key, bookmark) in bookmarks.wordpress" style="background-color: palegoldenrod; padding: 10px">
+        <a ng-click=goToWordpressPost(bookmark.id)>
+          <h2 class="post-title" ng-bind-html="bookmark.title | rawHtml"></h2>
+          
+          <p class="post-date" style="float: left">Publicado em {{bookmark.date}}
+            <div style="float: right;">
+              <a ng-click=removerFavorito(key)>
+                <h3><i class="icon ion-trash-a"></i></h3>
+              </a>
+            </div>
+          </p>
+        </a>
+        <br/>
+      </li>
+
+    </ul>
+  </ion-content>
+</ion-view>

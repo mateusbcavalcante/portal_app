@@ -1,0 +1,68 @@
+<ion-side-menus enable-menu-with-back-views="false">
+  <ion-side-menu-content class="post-size-14px">
+    <ion-nav-bar class="bar app-top-bar">
+      <ion-nav-back-button>
+      </ion-nav-back-button>
+      <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
+        </button>
+      </ion-nav-buttons>
+    </ion-nav-bar>
+    <ion-nav-view name="menuContent"></ion-nav-view>
+  </ion-side-menu-content>
+
+  <ion-side-menu side="left" class="main-menu" expose-aside-when="large">
+    <ion-content>
+      <ion-list>
+        <ion-item class="heading-item item item-avatar" nav-clear menu-close ui-sref="app.profile">
+          <div class="user-image-container">
+            <pre-img ratio="_1_1" helper-class="rounded-image">
+              <img class="user-image" ng-src="img/logo.jpg" spinner-on-load>
+          	</pre-img>
+          </div>
+        </ion-item>
+        <ion-item class="item-icon-left" nav-clear menu-close ui-sref="app.feeds-categories">
+          <i class="icon ion-radio-waves"></i>
+          <h2 class="menu-text">Início</h2>
+        </ion-item>
+
+        <ion-item class="item-icon-left" nav-clear menu-close ui-sref="app.colunistas">
+          <i class="icon ion-person-stalker"></i>
+          <h2 class="menu-text">Colunistas</h2>
+        </ion-item>
+
+        <ion-item class="item-icon-left" nav-clear menu-close ui-sref="app.multimidia">
+          <i class="icon ion-film-marker"></i>
+          <h2 class="menu-text">Rádio / TV</h2>
+        </ion-item>
+
+        <ion-item class="item-icon-left" nav-clear menu-close ui-sref="app.bookmarks">
+          <i class="icon ion-bookmark"></i>
+          <h2 class="menu-text">Favoritos</h2>
+        </ion-item>
+
+        <ion-item class="item-icon-left" nav-clear menu-close ui-sref="app.anuncie">
+          <i class="icon ion-speakerphone"></i>
+          <h2 class="menu-text">Anuncie Conosco</h2>
+        </ion-item>
+
+        <ion-item class="item-icon-left" nav-clear menu-close ui-sref="app.parceiros">
+          <i class="icon ion-ios-people"></i>
+          <h2 class="menu-text">Parceiros</h2>
+        </ion-item>
+
+        <ion-item class="item-icon-left" nav-clear menu-close ui-sref="app.contacts">
+          <i class="icon ion-information-circled"></i>
+          <h2 class="menu-text">Contato</h2>
+        </ion-item>
+
+        <div dynamic-anchor-fix>
+            <a class="button button-small button-block button-assertive" ng-href="http://www.portalarrudabastos.com.br/wp-admin">
+            <i class="icon ion-ios-locked-outline"></i> Área Restrita
+            </a>
+        </div>  
+
+    </ion-list>
+    </ion-content>
+  </ion-side-menu>
+</ion-side-menus>
